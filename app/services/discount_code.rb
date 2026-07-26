@@ -6,7 +6,7 @@ class DiscountCode
 
   # Codes are stored upper case with no surrounding whitespace.
   def normalized
-    raw.strip.upcase
+    raw.to_s.strip.upcase
   end
 
   def valid?
