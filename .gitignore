@@ -1,0 +1,10 @@
+
+.env
+docker-compose.override.yml
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
+
+.env
+docker-compose.override.yml
