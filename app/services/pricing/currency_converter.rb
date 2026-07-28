@@ -19,7 +19,11 @@ module Pricing
     attr_reader :from, :to
 
     def rate
+      return 1 if from == to
+
       row = ExchangeRate.find_by(base: from, quote: to)
+      raise MissingRate, "no hay tipo de cambio de #{from} a #{to}" if row.nil?
+
       row.multiplier
     end
   end
