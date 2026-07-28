@@ -11,7 +11,7 @@ class CustomerName
 
   # "A. Lovelace" — used in the compact order list.
   def short
-    "#{first_name[0]}. #{last_name}"
+    "#{first_name[0]}. #{last_name}".strip
   end
 
   private
@@ -23,6 +23,6 @@ class CustomerName
   end
 
   def last_name
-    customer[:last_name].strip
+    customer[:last_name].to_s.strip
   end
 end
