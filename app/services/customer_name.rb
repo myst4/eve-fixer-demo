@@ -23,6 +23,6 @@ class CustomerName
   end
 
   def last_name
-    customer[:last_name].strip
+    customer[:last_name].to_s.strip
   end
 end
