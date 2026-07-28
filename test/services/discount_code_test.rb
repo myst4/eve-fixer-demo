@@ -8,4 +8,12 @@ class DiscountCodeTest < ActiveSupport::TestCase
   test "rejects a code that is too short" do
     assert_not DiscountCode.new("ab").valid?
   end
+
+  test "normalises a nil code to an empty string" do
+    assert_equal "", DiscountCode.new(nil).normalized
+  end
+
+  test "rejects a nil code" do
+    assert_not DiscountCode.new(nil).valid?
+  end
 end
